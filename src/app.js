@@ -12,7 +12,7 @@ const server = http.createServer((request, response) => {
 
 
     if (params.has('hello')) {
-        if (name === '') {
+        if (request.url=== '?hello=') {
             response.statusCode = 400;
             response.statusMessage = 'Error';
             response.setHeader = 'Content Type: text/plain';
@@ -28,6 +28,7 @@ const server = http.createServer((request, response) => {
             return;
         
     } 
+
     
     if (request.url === '/?users') {
         response.statusCode = 200;
