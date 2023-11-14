@@ -12,12 +12,13 @@ const server = http.createServer((request, response) => {
 
 
     if (params.has('hello')) {
-        if (request.url=== '?hello=') {
+        if (name === '') {
             response.statusCode = 400;
             response.statusMessage = 'Error';
             response.setHeader = 'Content Type: text/plain';
             response.write(`Enter a name!`);
             response.end();
+            return;
         } 
             response.statusCode = 200;
             response.statusMessage = 'OK';
@@ -25,10 +26,9 @@ const server = http.createServer((request, response) => {
             response.write(`Hello, ${name}!`);
             response.end();
     
-            return;
+           return   
         
     } 
-
     
     if (request.url === '/?users') {
         response.statusCode = 200;
