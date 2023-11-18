@@ -1,1 +1,2 @@
-# NodeJS-main
+# skypro-backend-hw
+Репо с домашними работами по курсу бэкенд разработки от skypro
