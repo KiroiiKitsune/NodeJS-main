@@ -15,14 +15,14 @@ const server = http.createServer((request, response) => {
         if (name === '') {
             response.statusCode = 400;
             response.statusMessage = 'Error';
-            response.setHeader = 'Content Type: text/plain';
+            response.setHeader = ("Content-Type", "text/plain");
             response.write(`Enter a name!`);
             response.end();
             return;
         } 
             response.statusCode = 200;
             response.statusMessage = 'OK';
-            response.setHeader = 'Content Type: text/plain';
+            response.header = ("Content-Type", "text/plain");
             response.write(`Hello, ${name}!`);
             response.end();
     
@@ -33,7 +33,7 @@ const server = http.createServer((request, response) => {
     if (request.url === '/?users') {
         response.statusCode = 200;
         response.statusMessage = 'OK';
-        response.setHeader = 'Content Type: application/json';
+        response.setHeader = ("Content-Type", "application/json") ;
         response.write(getUsers());
         response.end();
 
@@ -44,7 +44,7 @@ const server = http.createServer((request, response) => {
     if (request.url === '/') {
         response.statusCode = 200;
         response.statusMessage = 'OK';
-        response.setHeader = 'Content Type: text/plain';
+        response.setHeader = ("Content-Type", "text/plain");
         response.write('Hello, world!');
         response.end();
 
@@ -52,7 +52,7 @@ const server = http.createServer((request, response) => {
     } else {
         response.statusCode = 500;
         response.statusMessage = 'Internal Server Error';
-        response.setHeader = 'Content Type: text/plain';
+        response.setHeader = ("Content-Type", "text/plain");
         response.write('');
         response.end();
     }
